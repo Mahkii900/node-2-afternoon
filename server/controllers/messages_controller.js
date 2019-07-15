@@ -17,15 +17,13 @@ module.exports = {
         const updateID = req.params.id
         const messageIndex = messages.findIndex(message => message.id === +updateID)
         
-        if (text) {
-            let message = messages[messageIndex]
+        let message = messages[messageIndex]
     
-            messages[messageIndex] = {
-                id: message.id,
-                text: text,
-                time: message.time
-            }
-        }
+        messages[messageIndex] = {
+            id: message.id,
+            text: text,
+            time: message.time
+         }
 
         res.status(200).send(messages)
     },
